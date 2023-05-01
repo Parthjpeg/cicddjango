@@ -1,19 +1,18 @@
-FROM python
+FROM python:3.10-alpine
 
 ENV PYTHONDONTWRITEBYTECODE=1
 
-ENV PYTHONUNBUFFERED=1 
+ENV PYTHONUNBUFFERED=1
 
 WORKDIR /code
 
-COPY requirments.txt  .
+COPY  /test123/requirements.txt  .
 
-RUN pip install -r requirments.txt
+RUN pip install -r  /test123/requirements.txt
 
 COPY . .
 
 EXPOSE 8000
 
 
-CMD ["python", "manage.py", "runserver"]
-
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
