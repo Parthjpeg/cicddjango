@@ -6,9 +6,9 @@ ENV PYTHONUNBUFFERED=1
 
 WORKDIR /code
 
-COPY  /test123/requirements.txt  .
+COPY  requirements.txt  .
 
-RUN pip install -r  /test123/requirements.txt
+RUN pip install -r  requirements.txt
 
 COPY . .
 
